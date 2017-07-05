@@ -1,0 +1,2 @@
+class RentingPhase < ApplicationRecord
+end
