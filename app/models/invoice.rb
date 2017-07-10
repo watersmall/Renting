@@ -10,7 +10,7 @@ class Invoice < ApplicationRecord
       the_duration[:month] =  self.end_date.month - self.start_date.month
       the_duration[:day] = 0
     else
-      the_duration[:month] =  self.end_date.month - self.start_date.month - (self.start_date.day >= self.end_date.day ? 1 : 0)
+      the_duration[:month] =  self.end_date.month - self.start_date.month - (self.start_date.day >= self.end_date.day ? 1 : 0) + (self.end_date.year - self.start_date.year) * 12
       the_duration[:day] =  (self.end_date - the_duration[:month].month).day - self.start_date.day + 1
     end
     the_duration
